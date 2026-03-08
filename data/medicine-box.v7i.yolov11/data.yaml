@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 22
+names: ['106', '108', '153', '174', '234', '310', '345', '346', '352', '355', '371', '393', '400', '401', '41', '414', '45', '50', '67', '79', '83', '92']
+
+roboflow:
+  workspace: yolo-m1fwc
+  project: medicine-box-o3he4
+  version: 7
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/yolo-m1fwc/medicine-box-o3he4/dataset/7
