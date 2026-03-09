@@ -7,6 +7,8 @@ from Predict import predict_image
 import cv2
 
 class MainWindow(QWidget):
+    """Enhanced main window with a card-based layout and styled controls for YOLO detection."""
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("欢迎界面")
@@ -224,7 +226,7 @@ class MainWindow(QWidget):
             self.layout().setContentsMargins(0, 0, 0, 0)
 
     def choose_image(self):
-        """选择图片并显示在第一个框中"""
+        """Open a file dialog to select an image and display it in the first card."""
         fname, _ = QFileDialog.getOpenFileName(self, '选择图片', '', "Image files (*.jpg *.gif *.png *.jpeg)")
 
         if fname:
@@ -243,7 +245,7 @@ class MainWindow(QWidget):
             print(f"Loaded image: {fname}")
 
     def start_crop(self):
-        """开始裁剪（预测）并显示在第二个框中"""
+        """Run YOLO prediction on the selected image and display the result in the second card."""
         if hasattr(self, 'current_image_path') and self.current_image_path:
             try:
                 model_path = "yolo11n.pt"

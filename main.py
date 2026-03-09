@@ -8,6 +8,8 @@ from Predict import predict_image
 import cv2
 
 class MainWindow(QWidget):
+    """Main application window for YOLO object detection with a simple layout."""
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("YOLO 目标检测")
@@ -62,7 +64,7 @@ class MainWindow(QWidget):
         self.setLayout(main_layout)
 
     def choose_image(self):
-        """选择图片并显示"""
+        """Open a file dialog to select an image and display it in the first panel."""
         fname, _ = QFileDialog.getOpenFileName(self, '选择图片', '', "Image files (*.jpg *.gif *.png *.jpeg)")
 
         if fname:
@@ -75,7 +77,7 @@ class MainWindow(QWidget):
                 print(f"Loaded image: {fname}")
 
     def Predict(self):
-        """调用预测函数并显示结果"""
+        """Run YOLO prediction on the selected image and display the annotated result."""
         if hasattr(self, 'current_image_path'):
             try:
                 # 调用预测函数
@@ -102,7 +104,7 @@ class MainWindow(QWidget):
             print("请先选择一张图片进行检测")
 
     def information_window(self):
-        """显示识别信息窗口"""
+        """Display a window with detailed detection information (not yet implemented)."""
         # 这里可以实现一个新的窗口来显示识别结果的详细信息
         pass
 

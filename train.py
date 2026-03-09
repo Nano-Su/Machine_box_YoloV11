@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 
 def main():
+    """Train a YOLOv11 model on a custom dataset."""
     model = YOLO("yolo11n.pt")
         # 使用内置 tensorboard 日志器，日志会写入 runs/train/yolo11n-futbol-players
     model.train(

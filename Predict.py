@@ -2,12 +2,13 @@ from ultralytics import YOLO
 
 def predict_image(image_path, model_path="yolo11n.pt", save=True, show=False):
     """
-    使用YOLO模型进行图片检测22402029@masu.edu.cn
-    :param image_path: 图片路径
-    :param model_path: 模型路径，默认 yolo11n.pt
-    :param save: 是否保存结果
-    :param show: 是否展示结果
-    :return: 检测结果列表
+    Perform object detection on an image using a YOLO model.
+
+    :param image_path: Path to the input image.
+    :param model_path: Path to the YOLO model weights (default: yolo11n.pt).
+    :param save: Whether to save the detection results to disk.
+    :param show: Whether to display the detection results in a window.
+    :return: List of detection results.
     """
     # Load the model
     model = YOLO(model_path)
