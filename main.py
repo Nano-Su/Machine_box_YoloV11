@@ -117,7 +117,7 @@ class MainWindow(QWidget):
         self.setMinimumSize(900, 500)
         # 预加载 YOLO 模型，避免每次预测都重新加载
         from ultralytics import YOLO
-        self.model = YOLO("yolo11n.pt")
+        self.model = YOLO("yolo11n-medicine-box2/weights/best.pt")
         # 临时文件列表，用于清理
         self._temp_files = []
         self.setup_ui()

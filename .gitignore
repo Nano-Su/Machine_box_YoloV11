@@ -114,6 +114,7 @@ datasets_origin/
 data/medicine-box.v7i.yolov11/test/
 data/medicine-box.v7i.yolov11/train/
 data/medicine-box.v7i.yolov11/valid/
+yolo11n-medicine-box2/
 
 # 图片文件（可选，如果不想上传测试图片）
 # *.jpg

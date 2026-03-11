@@ -1,10 +1,14 @@
-from ultralytics import YOLO
+from ultralytics import YOLO, settings
 
 def main():
     """
     YOLOv11 训练脚本 - 包含优化参数配置
-    支持：自适应学习率、早停、数据增强、混合精度训练等
+    支持：自适应学习率、早停、数据增强、混合精度训练、TensorBoard 记录等
     """
+    settings.update({"tensorboard": True})
+    print("TensorBoard 已开启，日志目录：runs/train")
+    print("启动可视化：tensorboard --logdir runs/train")
+
     # 加载预训练模型
     model = YOLO("yolo11n.pt")
 
